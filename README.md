@@ -14,7 +14,7 @@ npm install --save nest-jsonapi
 
 ## Reference Example
 
-[nestjs-jsonapi-example](https://github.com/tzellman/nestjs-jsonapi-example) is an example project that demonstrates the usage of this module. Since not all aspects of the module have been fully tested yet (coming soon!), I highly suggest checking this out!
+[nest-jsonapi-example](https://github.com/tzellman/nest-jsonapi-example) is an example project that demonstrates the usage of this module. Since not all aspects of the module have been fully tested yet (coming soon!), I highly suggest checking this out!
 
 ## Quick Start
 
