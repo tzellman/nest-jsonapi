@@ -1,0 +1,12 @@
+src
+tests
+types
+.gitignore
+.eslintrc.js
+.editorconfig
+.nvmrc
+.prettierignore
+.prettierrc
+commitlint.config.js
+jest.config.js
+tsconfig.json
