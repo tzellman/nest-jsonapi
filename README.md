@@ -9,7 +9,7 @@
 ## Installation
 
 ```bash
-npm install --save nestjs-jsonapi
+npm install --save nest-jsonapi
 ```
 
 ## Reference Example
@@ -22,7 +22,7 @@ Import the `JsonapiModule` into the root `AppModule` and use the `forRoot()` met
 
 ```typescript
 import { Module } from "@nestjs/common";
-import { JsonapiModule } from "nestjs-jsonapi";
+import { JsonapiModule } from "nest-jsonapi";
 
 @Module({
     imports: [
@@ -38,7 +38,7 @@ Afterward, the `JsonapiService` instance will be available to inject across enti
 
 ```typescript
 import { Controller, Inject } from "@nestjs/common";
-import { JsonapiService, JSONAPI_MODULE_SERVICE } from "nestjs-jsonapi";
+import { JsonapiService, JSONAPI_MODULE_SERVICE } from "nest-jsonapi";
 
 @Controller("photos")
 export class PhotosController {
