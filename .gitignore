@@ -4,3 +4,4 @@
 /.eslintcache
 npm-debug.log*
 /.idea
+*.iml

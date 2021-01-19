@@ -9,8 +9,12 @@
 ## Installation
 
 ```bash
-npm install --save nestjs-jsonapi transformalizer
+npm install --save nestjs-jsonapi
 ```
+
+## Reference Example
+
+[nestjs-jsonapi-example](https://github.com/tzellman/nestjs-jsonapi-example) is an example project that demonstrates the usage of this module. Since not all aspects of the module have been fully tested yet (coming soon!), I highly suggest checking this out!
 
 ## Quick Start
 
