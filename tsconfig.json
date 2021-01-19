@@ -1,0 +1,31 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "declarationMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "incremental": true,
+        "lib": ["es6", "esnext.asynciterable", "es2019"],
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "noLib": false,
+        "noUnusedLocals": false,
+        "outDir": "./lib",
+        "preserveConstEnums": true,
+        "pretty": true,
+        "removeComments": true,
+        "rootDirs": ["./src", "./tests"],
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictFunctionTypes": false,
+        "strictNullChecks": false,
+        "target": "es2017",
+        "tsBuildInfoFile": "./lib/tsconfig.tsbuildinfo",
+        "typeRoots": ["./node_modules/@types", "./types"]
+    },
+    "exclude": ["node_modules", "lib"]
+}
