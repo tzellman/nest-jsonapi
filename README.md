@@ -12,16 +12,11 @@
 npm install --save nest-jsonapi
 ```
 
-## Reference Example
-
-[nest-jsonapi-example](https://github.com/tzellman/nest-jsonapi-example) is an example project that demonstrates the usage of this module. Since not all aspects of the module have been fully tested yet (coming soon!), I highly suggest checking this out!
-
-## Quick Start
+## Usage
 
 Import the `JsonapiModule` into the root `AppModule` and use the `forRoot()` method to configure it:
 
 ```typescript
-import { Module } from "@nestjs/common";
 import { JsonapiModule } from "nest-jsonapi";
 
 @Module({
@@ -34,10 +29,9 @@ import { JsonapiModule } from "nest-jsonapi";
 export class AppModule {}
 ```
 
-Afterward, the `JsonapiService` instance will be available to inject across entire project using the service token `JSONAPI_MODULE_SERVICE`:
+Inject `JsonapiService`:
 
 ```typescript
-import { Controller, Inject } from "@nestjs/common";
 import { JsonapiService, JSONAPI_MODULE_SERVICE } from "nest-jsonapi";
 
 @Controller("photos")
@@ -47,6 +41,81 @@ export class PhotosController {
 ```
 
 Note that `JsonapiModule` is a global module, therefore it will be available in all modules.
+
+### Middleware
+
+If you plan on using the `JsonapiPayload` decorator (more info below), you must use the `JsonapiMiddleware` in your application. This does 2 things:
+
+1. enable parsing jsonapi content as JSON
+2. creates a request-scoped holder for tracking metadata
+
+e.g.
+
+```typescript
+export class AppModule implements NestModule {
+    public configure(consumer: MiddlewareConsumer): void {
+        consumer.apply(JsonapiMiddleware).forRoutes(PhotosController);
+    }
+}
+```
+
+### Interceptor
+
+The `JsonapiInterceptor` is used to properly transform your controller result data to JSONAPI. You can decorate at a class or method level:
+
+```typescript
+@UseInterceptors(JsonapiInterceptor)
+@Controller("photos")
+export default class PhotosController {}
+```
+
+### Payload Metadata
+
+In order for the `JsonapiInterceptor` to know _how_ to transform your data, you need to decorate your methods.
+
+```typescript
+@JsonapiPayload({ resource: RESOURCE_PHOTOS })
+@Get()
+public async findPhotos(@Query() query: FindOptions): Promise<Photo[]>
+```
+
+### Exception Filter
+
+In order to support error responses compliant with the JSONAPI specification, the `JsonapiExceptionFilter` exists.
+
+```typescript
+const { httpAdapter } = app.get(HttpAdapterHost);
+app.useGlobalFilters(new JsonapiExceptionFilter(httpAdapter));
+```
+
+### Schema Registration
+
+The `JsonapiService` requires schemas for the resources it is going to handle. You have control of how that is configured, by defining a schematic. We provide a thin wrapper around the `transformalizer` library.
+
+Typically you will want to register your schemas on module initialization.
+
+```typescript
+export class AppModule implements OnModuleInit {
+    constructor(@Inject(JSONAPI_MODULE_SERVICE) private readonly jsonapiService: JsonapiService) {}
+
+    public async onModuleInit(): Promise<void> {
+        this.jsonapiService.register({
+            name: RESOURCE_PHOTOS,
+            schema: new SchemaBuilder<Photo>(RESOURCE_PHOTOS)
+                .data(
+                    new SchemaDataBuilder<Photo>(RESOURCE_PHOTOS)
+                        .untransformAttributes({ deny: ["createdAt", "updatedAt"] })
+                        .build()
+                )
+                .build(),
+        });
+    }
+}
+```
+
+## Reference Example
+
+[nest-jsonapi-example](https://github.com/tzellman/nest-jsonapi-example) is an example project that demonstrates the usage of this module. Since not all aspects of the module have been fully tested yet (coming soon!), I highly suggest checking this out!
 
 ## API Docs
 
