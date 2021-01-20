@@ -1,5 +1,33 @@
 {
-  "extends": [
-    "config:base"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:base"],
+    "major": {
+        "enabled": true,
+        "stabilityDays": 2,
+        "prCreation": "not-pending",
+        "groupName": "major dependencies"
+    },
+    "minor": {
+        "enabled": true,
+        "prCreation": "not-pending",
+        "groupName": "minor dependencies"
+    },
+    "patch": {
+        "enabled": true,
+        "groupName": "patch dependencies"
+    },
+    "pin": {
+        "enabled": false
+    },
+    "separateMinorPatch": true,
+    "enabledManagers": ["npm"],
+    "packageRules": [
+        {
+            "paths": ["+(package.json)"],
+            "rangeStrategy": "bump"
+        }
+    ],
+    "masterIssue": false,
+    "labels": ["deps"],
+    "prBodyNotes": ["cc @tzellman"]
 }
