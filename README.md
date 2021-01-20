@@ -48,6 +48,10 @@ export class PhotosController {
 
 Note that `JsonapiModule` is a global module, therefore it will be available in all modules.
 
+## API Docs
+
+For detailed API information please visit the [API documentation](https://tzellman.github.io/nest-jsonapi/index.html).
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
