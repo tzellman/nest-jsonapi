@@ -27,5 +27,12 @@
         "tsBuildInfoFile": "./lib/tsconfig.tsbuildinfo",
         "typeRoots": ["./node_modules/@types", "./types"]
     },
-    "exclude": ["node_modules", "lib"]
+    "exclude": ["node_modules", "lib"],
+    "typedocOptions": {
+        "entryPoints": ["src/index.ts"],
+        "out": "docs",
+        "excludePrivate": true,
+        "theme": "minimal",
+        "includeVersion": true
+    }
 }
