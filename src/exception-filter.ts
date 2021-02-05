@@ -10,6 +10,15 @@ interface ValidationErrorResponse {
     error?: string;
 }
 
+export const isHTTPException = (error: HttpException | unknown): error is HttpException => {
+    const httpException = error as HttpException;
+    return (
+        httpException.getStatus !== undefined &&
+        httpException.getResponse !== undefined &&
+        Object.prototype.hasOwnProperty.call(httpException, 'message')
+    );
+};
+
 @Catch()
 export class JsonapiExceptionFilter extends BaseExceptionFilter {
     private readonly logger: Logger;
@@ -36,7 +45,7 @@ export class JsonapiExceptionFilter extends BaseExceptionFilter {
             let title = 'Server Error';
             let detail;
 
-            if (exception instanceof HttpException) {
+            if (isHTTPException(exception)) {
                 status = exception.getStatus();
                 const errorResponse = exception.getResponse();
                 title = exception.message;
