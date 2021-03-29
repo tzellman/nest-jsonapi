@@ -43,7 +43,7 @@
     "@nestjs/core": "^7.6.15",
     "class-transformer": "^0.4.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.6.6"
+    "rxjs": "^6.6.7"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.1",
@@ -75,7 +75,7 @@
     "pretty-quick": "3.1.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "rxjs": "6.6.6",
+    "rxjs": "6.6.7",
     "ts-jest": "26.5.4",
     "ts-node": "9.1.1",
     "tsc-watch": "4.2.9",
