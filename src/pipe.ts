@@ -4,6 +4,7 @@ import { JSONAPIDocument, ParsedJsonAPIResult } from 'transformalizer';
 import { REQUEST } from '@nestjs/core';
 import { Request } from 'express';
 import { JSONAPI_MODULE_SERVICE } from './constants';
+import { assertIsDefined } from './utils';
 
 /**
  * This {@link PipeTransform} uses a {@link JsonapiService} to untransform the input payload
@@ -23,7 +24,7 @@ export class JsonapiPipe implements PipeTransform {
             return untransformed;
         }
 
-        // assertIsDefined(jsonapiRequestHolder.resource);
+        assertIsDefined(jsonapiRequestHolder.resource);
         const data = (untransformed ?? {})[jsonapiRequestHolder.resource];
         if (data && Array.isArray(data)) {
             if (jsonapiRequestHolder.untransformArray) {

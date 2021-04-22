@@ -1,4 +1,4 @@
-import { Injectable, NestInterceptor, ExecutionContext, CallHandler, Inject } from '@nestjs/common';
+import { CallHandler, ExecutionContext, Inject, Injectable, NestInterceptor } from '@nestjs/common';
 import { map } from 'rxjs/operators';
 import { JSONAPI_CONTENT_TYPE, JSONAPI_MODULE_SERVICE, METADATA_KEY_JSONAPI_PAYLOAD } from './constants';
 import { ServerResponse } from 'http';
@@ -8,6 +8,7 @@ import { Request } from 'express';
 import { JsonapiPayloadOptions } from './payload-decorator';
 import { JSONAPIDocument } from 'transformalizer';
 import { Observable } from 'rxjs';
+import { assertIsDefined } from './utils';
 
 export const isJsonapiContentType = (contentType?: string): boolean =>
     (contentType || '').toLowerCase().indexOf(JSONAPI_CONTENT_TYPE.toLowerCase()) >= 0;
@@ -40,23 +41,32 @@ export class JsonapiInterceptor implements NestInterceptor {
             const start = new Date().getTime();
             return next.handle().pipe(
                 map((data) => {
+                    let jsonapiDocument: JSONAPIDocument;
                     if (data) {
+                        assertIsDefined(payloadOptions?.resource);
                         const params = {
-                            resourceName: payloadOptions?.resource,
+                            resourceName: payloadOptions.resource,
                             options: { meta: {} }
                         } as TransformParams;
                         params.source = data;
                         if (Array.isArray(data)) {
                             params.options.meta = { count: data.length };
                         }
-                        const jsonapiDocument: JSONAPIDocument = this.jsonapiService.transform(params);
-                        // add the completed-in meta
+                        jsonapiDocument = this.jsonapiService.transform(params);
+                    } else if (payloadOptions) {
+                        // payload was marked as jsonapi, so we still return a valid document
+                        jsonapiDocument = { jsonapi: { version: '1.0' } };
+                    }
+
+                    if (jsonapiDocument) {
                         if (!jsonapiDocument.meta) {
                             jsonapiDocument.meta = {};
                         }
                         jsonapiDocument.meta['completed-in'] = new Date().getTime() - start;
                         return jsonapiDocument;
                     }
+
+                    // pass-through if not decorated and falsy data
                     return data;
                 })
             );
