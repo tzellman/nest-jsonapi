@@ -2732,7 +2732,10 @@ img {
 					<a href="schemabuilder.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class">
-					<a href="schemabuilder.html#typename" class="tsd-kind-icon">type<wbr>Name</a>
+					<a href="schemabuilder.html#databuilder" class="tsd-kind-icon">data<wbr>Builder</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="schemabuilder.html#resourcename" class="tsd-kind-icon">resource<wbr>Name</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="schemabuilder.html#build" class="tsd-kind-icon">build</a>
@@ -2862,7 +2865,8 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class"><a href="schemabuilder.html#typename" class="tsd-kind-icon">type<wbr>Name</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="schemabuilder.html#databuilder" class="tsd-kind-icon">data<wbr>Builder</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="schemabuilder.html#resourcename" class="tsd-kind-icon">resource<wbr>Name</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2883,13 +2887,13 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Schema<wbr>Builder&lt;Resource&gt;<span class="tsd-signature-symbol">(</span>typeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Schema<wbr>Builder&lt;Resource&gt;<span class="tsd-signature-symbol">(</span>resourceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/a43a74a/src/schema-builder.ts#L5">src/schema-builder.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/6102559/src/schema-builder.ts#L6">src/schema-builder.ts:6</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2901,7 +2905,7 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>typeName: <span class="tsd-signature-type">string</span></h5>
+								<h5>resourceName: <span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="schemabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2912,9 +2916,19 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-				<a name="typename" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> type<wbr>Name</h3>
-				<div class="tsd-signature tsd-kind-icon">type<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="databuilder" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> data<wbr>Builder</h3>
+				<div class="tsd-signature tsd-kind-icon">data<wbr>Builder<span class="tsd-signature-symbol">:</span> <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/6102559/src/schema-builder.ts#L5">src/schema-builder.ts:5</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="resourcename" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> resource<wbr>Name</h3>
+				<div class="tsd-signature tsd-kind-icon">resource<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 				</aside>
 			</section>
@@ -2931,7 +2945,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/a43a74a/src/schema-builder.ts#L9">src/schema-builder.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/6102559/src/schema-builder.ts#L12">src/schema-builder.ts:12</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/schema.html" class="tsd-signature-type" data-tsd-kind="Interface">Schema</a></h4>
@@ -2948,7 +2962,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/a43a74a/src/schema-builder.ts#L28">src/schema-builder.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/6102559/src/schema-builder.ts#L31">src/schema-builder.ts:31</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2971,7 +2985,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/a43a74a/src/schema-builder.ts#L18">src/schema-builder.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/6102559/src/schema-builder.ts#L21">src/schema-builder.ts:21</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3012,7 +3026,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/a43a74a/src/schema-builder.ts#L23">src/schema-builder.ts:23</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/6102559/src/schema-builder.ts#L26">src/schema-builder.ts:26</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
