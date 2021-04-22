@@ -1,5 +1,6 @@
 import * as url from 'url';
 import { Links } from './interfaces';
+import { AssertionError } from 'assert';
 
 interface LinkOptions {
     originalUrl?: string;
@@ -62,3 +63,10 @@ const buildLink = (originalUrl: string, pageNumber: number, pageSize: number): s
         query
     });
 };
+
+// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+export function assertIsDefined<T>(val: T, name?: string): asserts val is NonNullable<T> {
+    if (val === undefined || val === null) {
+        throw new AssertionError({ message: `Expected '${name || 'val'}' to be defined, but received ${val}` });
+    }
+}
