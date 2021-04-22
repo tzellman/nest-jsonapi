@@ -43,7 +43,7 @@ interface AllowDeny<T> {
 export class SchemaDataBuilder<Resource = unknown> {
     private readonly bindings: SchemaData = {};
 
-    constructor(private readonly typeName: string) {}
+    constructor(private readonly resourceName: string) {}
 
     public static includeHasManyRelationship(
         params: SerializeRelationshipsDataParams,
@@ -184,7 +184,7 @@ export class SchemaDataBuilder<Resource = unknown> {
     }
 
     private _type(): string {
-        return this.typeName;
+        return this.resourceName;
     }
 
     private _attributes(options?: {

@@ -1,14 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import * as transformalizerFactory from 'transformalizer';
 import {
-    Transformalizer,
     JSONAPIDocument,
     ParsedJsonAPIResult,
     Schema,
-    SerializeRelationshipsDataParams
+    SerializeRelationshipsDataParams,
+    Transformalizer
 } from 'transformalizer';
 import { Dictionary } from './interfaces';
 import { ResourceLinks } from './schema-data-builder';
+import { SchemaBuilder } from './schema-builder';
 
 export { Schema, SerializeRelationshipsDataParams, JSONAPIDocument };
 
@@ -21,16 +22,14 @@ export interface JsonapiTransformer {
     readonly name: string;
     readonly options?: Dictionary;
     readonly schema: Schema;
-    // optional function that can help determine if an object can
-    // be transformed to type `name`
-    // if not provided, you must explicitly decorate controller
-    // methods with @JsonapiPayload
-    canTransform?: <T>(data: T) => boolean;
 }
+
+const isTransformer = (obj: JsonapiTransformer | unknown): obj is JsonapiTransformer =>
+    !!(obj as JsonapiTransformer).schema;
 
 export interface TransformParams {
     source: unknown;
-    resourceName?: string;
+    resourceName: string;
     options?: Options;
 }
 
@@ -44,7 +43,13 @@ export class JsonapiService {
         this.transformalizer = transformalizerFactory(options);
     }
 
-    public register(transformer: JsonapiTransformer): JsonapiService {
+    public register(transformerOrBuilder: JsonapiTransformer | SchemaBuilder): JsonapiService {
+        let transformer: JsonapiTransformer;
+        if (isTransformer(transformerOrBuilder)) {
+            transformer = transformerOrBuilder;
+        } else {
+            transformer = { name: transformerOrBuilder.resourceName, schema: transformerOrBuilder.build() };
+        }
         const { name, schema, options } = transformer;
         this.transformalizer.register({ name, schema, options });
         this.transformers.push(transformer);
@@ -53,19 +58,7 @@ export class JsonapiService {
 
     public transform(params: TransformParams): JSONAPIDocument {
         const { source, resourceName, options } = params;
-        let resource = resourceName;
-        if (!resource) {
-            for (const transformer of this.transformers) {
-                if (!resource && transformer.canTransform && transformer.canTransform(source)) {
-                    resource = transformer.name;
-                    break;
-                }
-            }
-        }
-        if (resource) {
-            return this.transformalizer.transform({ name: resource, source, options });
-        }
-        throw new Error(`No transformer is registered to handle the given input`);
+        return this.transformalizer.transform({ name: resourceName, source, options });
     }
 
     public untransform(document: JSONAPIDocument, options?: Dictionary): ParsedJsonAPIResult {

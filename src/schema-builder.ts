@@ -2,16 +2,19 @@ import { DocParams, Schema, SchemaData } from 'transformalizer';
 import { SchemaDataBuilder } from './schema-data-builder';
 
 export class SchemaBuilder<Resource = unknown> {
+    public readonly dataBuilder: SchemaDataBuilder<Resource>;
     private readonly bindings: Schema = {};
 
-    constructor(public readonly typeName: string) {}
+    constructor(public readonly resourceName: string) {
+        this.dataBuilder = new SchemaDataBuilder<Resource>(resourceName);
+    }
 
     public build(): Schema {
         const schema: Schema = {};
         // defer to default bindings if nothing was provided
         schema.links = this.bindings.links ?? this._links.bind(this);
         schema.meta = this.bindings.meta ?? this._meta.bind(this);
-        schema.data = this.bindings.data ?? new SchemaDataBuilder<Resource>(this.typeName).build();
+        schema.data = this.bindings.data ?? this.dataBuilder.build();
         return schema;
     }
 

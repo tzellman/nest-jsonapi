@@ -25,6 +25,10 @@
         {
             "paths": ["+(package.json)"],
             "rangeStrategy": "bump"
+        },
+        {
+            "matchPackageNames": ["husky"],
+            "allowedVersions": "<5"
         }
     ],
     "masterIssue": false,
