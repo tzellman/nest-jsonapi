@@ -1,6 +1,6 @@
 import * as faker from 'faker';
 import { Expose } from 'class-transformer';
-import { Dictionary, ResourceLinks, SchemaDataBuilder, JSONAPIDocument, JsonapiService, SchemaBuilder } from '../src';
+import { Dictionary, JSONAPIDocument, JsonapiService, ResourceLinks, SchemaBuilder, SchemaDataBuilder } from '../src';
 import { SerializeRelationshipsDataParams } from 'transformalizer';
 
 // represents the internal model
@@ -120,10 +120,9 @@ describe('jsonapi service', () => {
 
     describe('deny atts', () => {
         beforeEach(() => {
-            const schema = new SchemaBuilder<Person>(RESOURCE_PEOPLE)
-                .data(new SchemaDataBuilder<Person>(RESOURCE_PEOPLE).attributes({ deny: ['firstName'] }).build())
-                .build();
-            service.register({ name: RESOURCE_PEOPLE, schema });
+            const schemaBuilder = new SchemaBuilder<Person>(RESOURCE_PEOPLE);
+            schemaBuilder.dataBuilder.attributes({ deny: ['firstName'] });
+            service.register(schemaBuilder);
         });
 
         const expectPersonWithSomeAtts = (data: Dictionary, person: Person): void => {
@@ -255,18 +254,17 @@ describe('jsonapi service', () => {
     });
 
     describe('failure conditions', () => {
-        it('throws when resource is not registered but type given', () => {
+        it('throws when resource is not registered', () => {
             const person = new Person('Bob', 'Martin');
             expect(() => service.transform({ source: person, resourceName: RESOURCE_PEOPLE })).toThrow(
                 'Missing Schema: people'
             );
         });
 
-        it('throws when resource is not registered', () => {
+        it('throws when wrong resource is provided', () => {
             const person = new Person('Bob', 'Martin');
-            expect(() => service.transform({ source: person })).toThrow(
-                'No transformer is registered to handle the given input'
-            );
+            service.register(new SchemaBuilder<Person>(RESOURCE_PEOPLE));
+            expect(() => service.transform({ source: person, resourceName: 'bob' })).toThrow('Missing Schema: bob');
         });
     });
 
@@ -332,32 +330,6 @@ describe('jsonapi service', () => {
             expectModel(data, album, RESOURCE_ALBUMS);
             expect(included).toBeDefined();
             expect(included.length).toBe(2);
-        });
-    });
-
-    describe('transform without resource name', () => {
-        beforeEach(() => {
-            service.register({
-                name: RESOURCE_PEOPLE,
-                schema: new SchemaBuilder<Person>(RESOURCE_PEOPLE).build(),
-                canTransform: (data) =>
-                    data instanceof Person || (Array.isArray(data) && data.every((d) => d instanceof Person))
-            });
-        });
-
-        it('single instance transform', () => {
-            const bob = new Person('Bob', 'Martin');
-            const result = service.transform({ source: bob });
-            const { data } = result;
-            expectModel(data, bob, RESOURCE_PEOPLE);
-        });
-
-        it('array transform', () => {
-            const bob = new Person('Bob', 'Martin');
-            const alice = new Person('Alice', 'Smith');
-            const result = service.transform({ source: [bob, alice] });
-            const { data } = result;
-            expectModelArray(data, [bob, alice], RESOURCE_PEOPLE);
         });
     });
 });

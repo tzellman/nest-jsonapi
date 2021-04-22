@@ -99,16 +99,9 @@ export class AppModule implements OnModuleInit {
     constructor(@Inject(JSONAPI_MODULE_SERVICE) private readonly jsonapiService: JsonapiService) {}
 
     public async onModuleInit(): Promise<void> {
-        this.jsonapiService.register({
-            name: RESOURCE_PHOTOS,
-            schema: new SchemaBuilder<Photo>(RESOURCE_PHOTOS)
-                .data(
-                    new SchemaDataBuilder<Photo>(RESOURCE_PHOTOS)
-                        .untransformAttributes({ deny: ["createdAt", "updatedAt"] })
-                        .build()
-                )
-                .build(),
-        });
+        const photoBuilder = new SchemaBuilder<Photo>(RESOURCE_PHOTOS);
+        photoBuilder.dataBuilder.untransformAttributes({ deny: ["createdAt", "updatedAt"] });
+        this.jsonapiService.register(photoBuilder);
     }
 }
 ```
