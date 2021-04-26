@@ -54,7 +54,7 @@
     "@nestjs/testing": "7.6.15",
     "@types/dot-object": "2.1.2",
     "@types/faker": "5.5.3",
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "@types/node": "14.14.41",
     "@types/validator": "13.1.3",
     "@typescript-eslint/eslint-plugin": "4.22.0",
@@ -81,7 +81,7 @@
     "tsc-watch": "4.2.9",
     "tsconfig-paths": "3.9.0",
     "tslint": "6.1.3",
-    "typedoc": "0.20.35",
+    "typedoc": "0.20.36",
     "typescript": "4.2.4"
   },
   "husky": {
