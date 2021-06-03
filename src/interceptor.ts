@@ -4,7 +4,8 @@ import { JSONAPI_CONTENT_TYPE, JSONAPI_MODULE_SERVICE, METADATA_KEY_JSONAPI_PAYL
 import { ServerResponse } from 'http';
 import { JsonapiService, TransformParams } from './service';
 import { Reflector } from '@nestjs/core';
-import { Request } from 'express';
+import { Request as ExpressRequest, Response as ExpressResponse } from 'express';
+import { FastifyRequest, FastifyReply } from 'fastify';
 import { JsonapiPayloadOptions } from './payload-decorator';
 import { JSONAPIDocument } from 'transformalizer';
 import { Observable } from 'rxjs';
@@ -12,6 +13,16 @@ import { assertIsDefined } from './utils';
 
 export const isJsonapiContentType = (contentType?: string): boolean =>
     (contentType || '').toLowerCase().indexOf(JSONAPI_CONTENT_TYPE.toLowerCase()) >= 0;
+
+type ExpressOrFastifyRequest = ExpressRequest | FastifyRequest;
+
+function checkIfRequestIsExpress(request: ExpressOrFastifyRequest): request is ExpressRequest {
+    if (typeof (request as ExpressRequest)?.header === 'function') {
+        return true;
+    }
+
+    return false;
+}
 
 @Injectable()
 export class JsonapiInterceptor implements NestInterceptor {
@@ -21,8 +32,10 @@ export class JsonapiInterceptor implements NestInterceptor {
     ) {}
 
     public intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
-        const request = context.getArgByIndex<Request>(0);
-        const response = context.getArgByIndex<ServerResponse>(1);
+        const request = context.getArgByIndex<ExpressRequest | FastifyRequest>(0);
+        const response = context.getArgByIndex<ExpressRequest | FastifyRequest>(1);
+
+        const isExpressRequest = checkIfRequestIsExpress(request);
 
         const payloadOptions = this.reflector.get<JsonapiPayloadOptions>(
             METADATA_KEY_JSONAPI_PAYLOAD,
@@ -36,8 +49,21 @@ export class JsonapiInterceptor implements NestInterceptor {
         }
 
         // only make jsonapi specific mofifications IFF the client sent the proper header
-        if (isJsonapiContentType(request.header('accept'))) {
-            response.setHeader('content-type', JSONAPI_CONTENT_TYPE);
+        let acceptHeader;
+
+        if (isExpressRequest) {
+            acceptHeader = request.header('accept');
+        } else {
+            acceptHeader = request.headers?.accept;
+        }
+
+        if (isJsonapiContentType(acceptHeader)) {
+            if (isExpressRequest) {
+                response.setHeader('content-type', JSONAPI_CONTENT_TYPE);
+            } else {
+                response.header('content-type', JSONAPI_CONTENT_TYPE);
+            }
+
             const start = new Date().getTime();
             return next.handle().pipe(
                 map((data) => {
