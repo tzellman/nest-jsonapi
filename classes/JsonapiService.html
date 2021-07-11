@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SchemaDataBuilder | nest-jsonapi - v0.2.0</title>
+	<title>JsonapiService | nest-jsonapi - v0.2.0</title>
 	<meta name="description" content="Documentation for nest-jsonapi - v0.2.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
@@ -2705,168 +2705,136 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class">
-			<a href="jsonapiexceptionfilter.html" class="tsd-kind-icon">Jsonapi<wbr>Exception<wbr>Filter</a>
+			<a href="JsonapiExceptionFilter.html" class="tsd-kind-icon">Jsonapi<wbr>Exception<wbr>Filter</a>
 		</li>
 		<li class=" tsd-kind-class">
-			<a href="jsonapiinterceptor.html" class="tsd-kind-icon">Jsonapi<wbr>Interceptor</a>
+			<a href="JsonapiInterceptor.html" class="tsd-kind-icon">Jsonapi<wbr>Interceptor</a>
 		</li>
 		<li class=" tsd-kind-class">
-			<a href="jsonapimiddleware.html" class="tsd-kind-icon">Jsonapi<wbr>Middleware</a>
+			<a href="JsonapiMiddleware.html" class="tsd-kind-icon">Jsonapi<wbr>Middleware</a>
 		</li>
 		<li class=" tsd-kind-class">
-			<a href="jsonapimodule.html" class="tsd-kind-icon">Jsonapi<wbr>Module</a>
+			<a href="JsonapiModule.html" class="tsd-kind-icon">Jsonapi<wbr>Module</a>
 		</li>
 		<li class=" tsd-kind-class">
-			<a href="jsonapipipe.html" class="tsd-kind-icon">Jsonapi<wbr>Pipe</a>
+			<a href="JsonapiPipe.html" class="tsd-kind-icon">Jsonapi<wbr>Pipe</a>
 		</li>
 		<li class=" tsd-kind-class">
-			<a href="jsonapirequestholder.html" class="tsd-kind-icon">Jsonapi<wbr>Request<wbr>Holder</a>
+			<a href="JsonapiRequestHolder.html" class="tsd-kind-icon">Jsonapi<wbr>Request<wbr>Holder</a>
 		</li>
-		<li class=" tsd-kind-class">
-			<a href="jsonapiservice.html" class="tsd-kind-icon">Jsonapi<wbr>Service</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="schemabuilder.html" class="tsd-kind-icon">Schema<wbr>Builder</a>
-		</li>
-		<li class="current tsd-kind-class tsd-has-type-parameter">
-			<a href="schemadatabuilder.html" class="tsd-kind-icon">Schema<wbr>Data<wbr>Builder</a>
+		<li class="current tsd-kind-class">
+			<a href="JsonapiService.html" class="tsd-kind-icon">Jsonapi<wbr>Service</a>
 			<ul>
-				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
-					<a href="schemadatabuilder.html#constructor" class="tsd-kind-icon">constructor</a>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+					<a href="JsonapiService.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="schemadatabuilder.html#attributes" class="tsd-kind-icon">attributes</a>
+					<a href="JsonapiService.html#register" class="tsd-kind-icon">register</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="schemadatabuilder.html#build" class="tsd-kind-icon">build</a>
+					<a href="JsonapiService.html#transform" class="tsd-kind-icon">transform</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="schemadatabuilder.html#id" class="tsd-kind-icon">id</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="schemadatabuilder.html#relationships" class="tsd-kind-icon">relationships</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="schemadatabuilder.html#type" class="tsd-kind-icon">type</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="schemadatabuilder.html#untransformattributes" class="tsd-kind-icon">untransform<wbr>Attributes</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="schemadatabuilder.html#includebelongstorelationship" class="tsd-kind-icon">include<wbr>Belongs<wbr>ToRelationship</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="schemadatabuilder.html#includehasmanyrelationship" class="tsd-kind-icon">include<wbr>Has<wbr>Many<wbr>Relationship</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="schemadatabuilder.html#linktobelongstorelationship" class="tsd-kind-icon">link<wbr>ToBelongs<wbr>ToRelationship</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="schemadatabuilder.html#linktohasmanyrelationship" class="tsd-kind-icon">link<wbr>ToHas<wbr>Many<wbr>Relationship</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="schemadatabuilder.html#mergerelationships" class="tsd-kind-icon">merge<wbr>Relationships</a>
+					<a href="JsonapiService.html#untransform" class="tsd-kind-icon">untransform</a>
 				</li>
 			</ul>
 		</li>
-		<li class=" tsd-kind-interface">
-			<a href="../interfaces/jsonapidocument.html" class="tsd-kind-icon">JSONAPIDocument</a>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="SchemaBuilder.html" class="tsd-kind-icon">Schema<wbr>Builder</a>
+		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="SchemaDataBuilder.html" class="tsd-kind-icon">Schema<wbr>Data<wbr>Builder</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/jsonapimoduleasyncoptions.html" class="tsd-kind-icon">Jsonapi<wbr>Module<wbr>Async<wbr>Options</a>
+			<a href="../interfaces/JSONAPIDocument.html" class="tsd-kind-icon">JSONAPIDocument</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/jsonapimoduleoptions.html" class="tsd-kind-icon">Jsonapi<wbr>Module<wbr>Options</a>
+			<a href="../interfaces/JsonapiModuleAsyncOptions.html" class="tsd-kind-icon">Jsonapi<wbr>Module<wbr>Async<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/jsonapimoduleoptionsfactory.html" class="tsd-kind-icon">Jsonapi<wbr>Module<wbr>Options<wbr>Factory</a>
+			<a href="../interfaces/JsonapiModuleOptions.html" class="tsd-kind-icon">Jsonapi<wbr>Module<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/jsonapipayloadoptions.html" class="tsd-kind-icon">Jsonapi<wbr>Payload<wbr>Options</a>
+			<a href="../interfaces/JsonapiModuleOptionsFactory.html" class="tsd-kind-icon">Jsonapi<wbr>Module<wbr>Options<wbr>Factory</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/jsonapitransformer.html" class="tsd-kind-icon">Jsonapi<wbr>Transformer</a>
+			<a href="../interfaces/JsonapiPayloadOptions.html" class="tsd-kind-icon">Jsonapi<wbr>Payload<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/links.html" class="tsd-kind-icon">Links</a>
+			<a href="../interfaces/JsonapiTransformer.html" class="tsd-kind-icon">Jsonapi<wbr>Transformer</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/options.html" class="tsd-kind-icon">Options</a>
+			<a href="../interfaces/Links.html" class="tsd-kind-icon">Links</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/relationship.html" class="tsd-kind-icon">Relationship</a>
+			<a href="../interfaces/Options.html" class="tsd-kind-icon">Options</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/Relationship.html" class="tsd-kind-icon">Relationship</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="../interfaces/resourceidentifier.html" class="tsd-kind-icon">Resource<wbr>Identifier</a>
+			<a href="../interfaces/ResourceIdentifier.html" class="tsd-kind-icon">Resource<wbr>Identifier</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/resourcelinks.html" class="tsd-kind-icon">Resource<wbr>Links</a>
+			<a href="../interfaces/ResourceLinks.html" class="tsd-kind-icon">Resource<wbr>Links</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/schema.html" class="tsd-kind-icon">Schema</a>
+			<a href="../interfaces/Schema.html" class="tsd-kind-icon">Schema</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-kind-icon">Serialize<wbr>Relationships<wbr>Data<wbr>Params</a>
+			<a href="../interfaces/SerializeRelationshipsDataParams.html" class="tsd-kind-icon">Serialize<wbr>Relationships<wbr>Data<wbr>Params</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/transformparams.html" class="tsd-kind-icon">Transform<wbr>Params</a>
+			<a href="../interfaces/TransformParams.html" class="tsd-kind-icon">Transform<wbr>Params</a>
 		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-			<a href="../modules.html#dictionary" class="tsd-kind-icon">Dictionary</a>
+			<a href="../modules.html#Dictionary" class="tsd-kind-icon">Dictionary</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
-			<a href="../modules.html#resourcelink" class="tsd-kind-icon">Resource<wbr>Link</a>
+			<a href="../modules.html#ResourceLink" class="tsd-kind-icon">Resource<wbr>Link</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
-			<a href="../modules.html#resourcelinkage" class="tsd-kind-icon">Resource<wbr>Linkage</a>
+			<a href="../modules.html#ResourceLinkage" class="tsd-kind-icon">Resource<wbr>Linkage</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../modules.html#jsonapi_content_type" class="tsd-kind-icon">JSONAPI_<wbr>CONTENT_<wbr>TYPE</a>
+			<a href="../modules.html#JSONAPI_CONTENT_TYPE" class="tsd-kind-icon">JSONAPI_<wbr>CONTENT_<wbr>TYPE</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../modules.html#jsonapi_module_options" class="tsd-kind-icon">JSONAPI_<wbr>MODULE_<wbr>OPTIONS</a>
+			<a href="../modules.html#JSONAPI_MODULE_OPTIONS" class="tsd-kind-icon">JSONAPI_<wbr>MODULE_<wbr>OPTIONS</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../modules.html#jsonapi_module_service" class="tsd-kind-icon">JSONAPI_<wbr>MODULE_<wbr>SERVICE</a>
+			<a href="../modules.html#JSONAPI_MODULE_SERVICE" class="tsd-kind-icon">JSONAPI_<wbr>MODULE_<wbr>SERVICE</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../modules.html#json_content_type" class="tsd-kind-icon">JSON_<wbr>CONTENT_<wbr>TYPE</a>
+			<a href="../modules.html#JSON_CONTENT_TYPE" class="tsd-kind-icon">JSON_<wbr>CONTENT_<wbr>TYPE</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../modules.html#metadata_key_jsonapi_payload" class="tsd-kind-icon">METADATA_<wbr>KEY_<wbr>JSONAPI_<wbr>PAYLOAD</a>
+			<a href="../modules.html#METADATA_KEY_JSONAPI_PAYLOAD" class="tsd-kind-icon">METADATA_<wbr>KEY_<wbr>JSONAPI_<wbr>PAYLOAD</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../modules.html#jsonapipayload" class="tsd-kind-icon">Jsonapi<wbr>Payload</a>
+			<a href="../modules.html#JsonapiPayload" class="tsd-kind-icon">Jsonapi<wbr>Payload</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="../modules.html#assertisdefined" class="tsd-kind-icon">assert<wbr>IsDefined</a>
+			<a href="../modules.html#assertIsDefined" class="tsd-kind-icon">assert<wbr>IsDefined</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../modules.html#buildlinks" class="tsd-kind-icon">build<wbr>Links</a>
+			<a href="../modules.html#buildLinks" class="tsd-kind-icon">build<wbr>Links</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../modules.html#ishttpexception" class="tsd-kind-icon">isHTTPException</a>
+			<a href="../modules.html#isHTTPException" class="tsd-kind-icon">isHTTPException</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../modules.html#isjsonapicontenttype" class="tsd-kind-icon">is<wbr>Jsonapi<wbr>Content<wbr>Type</a>
+			<a href="../modules.html#isJsonapiContentType" class="tsd-kind-icon">is<wbr>Jsonapi<wbr>Content<wbr>Type</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<section class="tsd-panel tsd-type-parameters">
-			<h3>Type parameters</h3>
-			<ul class="tsd-type-parameters">
-				<li>
-					<h4>Resource = <span class="tsd-signature-type">unknown</span></h4>
-				</li>
-			</ul>
-		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">SchemaDataBuilder</span>
+					<span class="target">JsonapiService</span>
 				</li>
 			</ul>
 		</section>
@@ -2877,23 +2845,15 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter"><a href="schemadatabuilder.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="JsonapiService.html#constructor" class="tsd-kind-icon">constructor</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="schemadatabuilder.html#attributes" class="tsd-kind-icon">attributes</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="schemadatabuilder.html#build" class="tsd-kind-icon">build</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="schemadatabuilder.html#id" class="tsd-kind-icon">id</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="schemadatabuilder.html#relationships" class="tsd-kind-icon">relationships</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="schemadatabuilder.html#type" class="tsd-kind-icon">type</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="schemadatabuilder.html#untransformattributes" class="tsd-kind-icon">untransform<wbr>Attributes</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="schemadatabuilder.html#includebelongstorelationship" class="tsd-kind-icon">include<wbr>Belongs<wbr>ToRelationship</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="schemadatabuilder.html#includehasmanyrelationship" class="tsd-kind-icon">include<wbr>Has<wbr>Many<wbr>Relationship</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="schemadatabuilder.html#linktobelongstorelationship" class="tsd-kind-icon">link<wbr>ToBelongs<wbr>ToRelationship</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="schemadatabuilder.html#linktohasmanyrelationship" class="tsd-kind-icon">link<wbr>ToHas<wbr>Many<wbr>Relationship</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="schemadatabuilder.html#mergerelationships" class="tsd-kind-icon">merge<wbr>Relationships</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="JsonapiService.html#register" class="tsd-kind-icon">register</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="JsonapiService.html#transform" class="tsd-kind-icon">transform</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="JsonapiService.html#untransform" class="tsd-kind-icon">untransform</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2901,32 +2861,26 @@ img {
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Constructors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
-				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Schema<wbr>Data<wbr>Builder&lt;Resource&gt;<span class="tsd-signature-symbol">(</span>resourceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Jsonapi<wbr>Service<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../modules.html#Dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="JsonapiService.html" class="tsd-signature-type" data-tsd-kind="Class">JsonapiService</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L44">src/schema-data-builder.ts:44</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/f1538e4/src/service.ts#L39">src/service.ts:39</a></li>
 							</ul>
 						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>Resource = <span class="tsd-signature-type">unknown</span></h4>
-							</li>
-						</ul>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>resourceName: <span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../modules.html#Dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="JsonapiService.html" class="tsd-signature-type" data-tsd-kind="Class">JsonapiService</a></h4>
 					</li>
 				</ul>
 			</section>
@@ -2934,282 +2888,74 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="attributes" class="tsd-anchor"></a>
-				<h3>attributes</h3>
+				<a name="register" class="tsd-anchor"></a>
+				<h3>register</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">attributes<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SerializeHandler</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">AllowDeny</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>transformerOrBuilder<span class="tsd-signature-symbol">: </span><a href="../interfaces/JsonapiTransformer.html" class="tsd-signature-type" data-tsd-kind="Interface">JsonapiTransformer</a><span class="tsd-signature-symbol"> | </span><a href="SchemaBuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="JsonapiService.html" class="tsd-signature-type" data-tsd-kind="Class">JsonapiService</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L155">src/schema-data-builder.ts:155</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/f1538e4/src/service.ts#L46">src/service.ts:46</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> handler: <span class="tsd-signature-type">SerializeHandler</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">AllowDeny</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>transformerOrBuilder: <a href="../interfaces/JsonapiTransformer.html" class="tsd-signature-type" data-tsd-kind="Interface">JsonapiTransformer</a><span class="tsd-signature-symbol"> | </span><a href="SchemaBuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="JsonapiService.html" class="tsd-signature-type" data-tsd-kind="Class">JsonapiService</a></h4>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="build" class="tsd-anchor"></a>
-				<h3>build</h3>
+				<a name="transform" class="tsd-anchor"></a>
+				<h3>transform</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SchemaData</span></li>
+					<li class="tsd-signature tsd-kind-icon">transform<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/TransformParams.html" class="tsd-signature-type" data-tsd-kind="Interface">TransformParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/JSONAPIDocument.html" class="tsd-signature-type" data-tsd-kind="Interface">JSONAPIDocument</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L134">src/schema-data-builder.ts:134</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/f1538e4/src/service.ts#L59">src/service.ts:59</a></li>
 							</ul>
 						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SchemaData</span></h4>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>params: <a href="../interfaces/TransformParams.html" class="tsd-signature-type" data-tsd-kind="Interface">TransformParams</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/JSONAPIDocument.html" class="tsd-signature-type" data-tsd-kind="Interface">JSONAPIDocument</a></h4>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="id" class="tsd-anchor"></a>
-				<h3>id</h3>
+				<a name="untransform" class="tsd-anchor"></a>
+				<h3>untransform</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SerializeHandler</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">untransform<span class="tsd-signature-symbol">(</span>document<span class="tsd-signature-symbol">: </span><a href="../interfaces/JSONAPIDocument.html" class="tsd-signature-type" data-tsd-kind="Interface">JSONAPIDocument</a>, options<span class="tsd-signature-symbol">?: </span><a href="../modules.html#Dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParsedJsonAPIResult</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L145">src/schema-data-builder.ts:145</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/f1538e4/src/service.ts#L64">src/service.ts:64</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>handler: <span class="tsd-signature-type">SerializeHandler</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>document: <a href="../interfaces/JSONAPIDocument.html" class="tsd-signature-type" data-tsd-kind="Interface">JSONAPIDocument</a></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../modules.html#Dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="relationships" class="tsd-anchor"></a>
-				<h3>relationships</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">relationships<span class="tsd-signature-symbol">(</span>relationships<span class="tsd-signature-symbol">: </span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SerializeRelationshipsHandler</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L176">src/schema-data-builder.ts:176</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>relationships: <a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SerializeRelationshipsHandler</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="type" class="tsd-anchor"></a>
-				<h3>type</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SerializeHandler</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L150">src/schema-data-builder.ts:150</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>handler: <span class="tsd-signature-type">SerializeHandler</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="untransformattributes" class="tsd-anchor"></a>
-				<h3>untransform<wbr>Attributes</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">untransform<wbr>Attributes<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AllowDeny</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DeserializeHandler</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L164">src/schema-data-builder.ts:164</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> handler: <span class="tsd-signature-type">AllowDeny</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DeserializeHandler</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="schemadatabuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SchemaDataBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Resource</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="includebelongstorelationship" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> include<wbr>Belongs<wbr>ToRelationship</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">include<wbr>Belongs<wbr>ToRelationship<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a>, field<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, resource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, allowNull<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L68">src/schema-data-builder.ts:68</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>params: <a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a></h5>
-							</li>
-							<li>
-								<h5>field: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>resource: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> allowNull: <span class="tsd-signature-type">boolean</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="includehasmanyrelationship" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> include<wbr>Has<wbr>Many<wbr>Relationship</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">include<wbr>Has<wbr>Many<wbr>Relationship<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a>, field<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, resource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L48">src/schema-data-builder.ts:48</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>params: <a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a></h5>
-							</li>
-							<li>
-								<h5>field: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>resource: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="linktobelongstorelationship" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> link<wbr>ToBelongs<wbr>ToRelationship</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">link<wbr>ToBelongs<wbr>ToRelationship<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a>, relatedIdPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, resource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, linkMeta<span class="tsd-signature-symbol">?: </span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L87">src/schema-data-builder.ts:87</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>params: <a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a></h5>
-							</li>
-							<li>
-								<h5>relatedIdPath: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>resource: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> linkMeta: <a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="linktohasmanyrelationship" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> link<wbr>ToHas<wbr>Many<wbr>Relationship</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">link<wbr>ToHas<wbr>Many<wbr>Relationship<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a>, parentResource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, relatedResource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, linkMeta<span class="tsd-signature-symbol">?: </span><a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L114">src/schema-data-builder.ts:114</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>params: <a href="../interfaces/serializerelationshipsdataparams.html" class="tsd-signature-type" data-tsd-kind="Interface">SerializeRelationshipsDataParams</a></h5>
-							</li>
-							<li>
-								<h5>parentResource: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>relatedResource: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> linkMeta: <a href="../modules.html#dictionary" class="tsd-signature-type" data-tsd-kind="Type alias">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="mergerelationships" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> merge<wbr>Relationships</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">merge<wbr>Relationships<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>relationships<span class="tsd-signature-symbol">: </span><a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/ec0136e/src/schema-data-builder.ts#L129">src/schema-data-builder.ts:129</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>relationships: <a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a><span class="tsd-signature-symbol">[]</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../interfaces/relationship.html" class="tsd-signature-type" data-tsd-kind="Interface">Relationship</a></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ParsedJsonAPIResult</span></h4>
 					</li>
 				</ul>
 			</section>
