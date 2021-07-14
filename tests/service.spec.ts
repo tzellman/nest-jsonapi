@@ -8,7 +8,7 @@ class Person {
     public readonly id: string;
 
     constructor(public readonly firstName: string, public readonly lastName?: string) {
-        this.id = faker.random.uuid();
+        this.id = faker.datatype.uuid();
     }
 
     // additional getters must be exposed
@@ -22,7 +22,7 @@ class Photo {
     public readonly id: string;
 
     constructor(public readonly url: string, public readonly creator?: Person) {
-        this.id = faker.random.uuid();
+        this.id = faker.datatype.uuid();
     }
 }
 
@@ -30,7 +30,7 @@ class Album {
     public readonly id: string;
 
     constructor(public readonly name: string, public readonly photos?: Photo[]) {
-        this.id = faker.random.uuid();
+        this.id = faker.datatype.uuid();
     }
 }
 
@@ -79,6 +79,17 @@ describe('jsonapi service', () => {
         expect(relData).toBeDefined();
         expect(relData.id).toEqual(model.id);
         expect(relData.type).toEqual(type);
+    };
+
+    const expectRelationshipArray = (relationship: Dictionary, type: string, length: number): void => {
+        expect(relationship).toBeDefined();
+        const relData = relationship.data as Dictionary[];
+        expect(relData).toBeDefined();
+        expect(relData.length).toBe(length);
+        for (const rel of relData) {
+            expect(rel.id).toBeDefined();
+            expect(rel.type).toEqual(type);
+        }
     };
 
     describe('attributes', () => {
@@ -330,6 +341,37 @@ describe('jsonapi service', () => {
             expectModel(data, album, RESOURCE_ALBUMS);
             expect(included).toBeDefined();
             expect(included.length).toBe(2);
+        });
+
+        it('hasMany relationship, not included', () => {
+            // re-register, but do not include the photos in the payload
+            service.register({
+                name: RESOURCE_ALBUMS,
+                schema: new SchemaBuilder<Album>(RESOURCE_ALBUMS)
+                    .data(
+                        new SchemaDataBuilder<Album>(RESOURCE_ALBUMS)
+                            .attributes({ deny: ['photos'] })
+                            .relationships({
+                                photos: (params: SerializeRelationshipsDataParams) =>
+                                    SchemaDataBuilder.includeHasManyRelationship(params, 'photos', RESOURCE_PHOTOS, {
+                                        included: false
+                                    })
+                            })
+                            .build()
+                    )
+                    .build()
+            });
+
+            const bob = new Person('Bob', 'Martin');
+            const photo = new Photo(faker.image.imageUrl(), bob);
+            const album = new Album('faves', [photo]);
+            const result = service.transform({ source: album, resourceName: RESOURCE_ALBUMS });
+
+            const { data, included } = result;
+            expectModel(data, album, RESOURCE_ALBUMS);
+            expect(included).toBeUndefined();
+            expect(data.relationships.photos).toBeDefined();
+            expectRelationshipArray(data.relationships.photos, RESOURCE_PHOTOS, 1);
         });
     });
 });
