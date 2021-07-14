@@ -48,7 +48,8 @@ export class SchemaDataBuilder<Resource = unknown> {
     public static includeHasManyRelationship(
         params: SerializeRelationshipsDataParams,
         field: string,
-        resource: string
+        resource: string,
+        options?: { included?: boolean }
     ): Relationship | undefined {
         const { data } = params;
         const relation = data[field];
@@ -58,7 +59,7 @@ export class SchemaDataBuilder<Resource = unknown> {
                 data: data[field].map((obj: unknown) => ({
                     name: resource,
                     data: obj,
-                    included: true
+                    included: options?.included ?? true
                 }))
             };
         }
@@ -69,7 +70,7 @@ export class SchemaDataBuilder<Resource = unknown> {
         params: SerializeRelationshipsDataParams,
         field: string,
         resource: string,
-        allowNull?: boolean
+        options?: { included?: boolean; allowNull?: boolean }
     ): Relationship | undefined {
         const { data } = params;
         if (data[field]) {
@@ -77,11 +78,11 @@ export class SchemaDataBuilder<Resource = unknown> {
                 data: {
                     name: resource,
                     data: data[field],
-                    included: true
+                    included: options?.included ?? true
                 }
             };
         }
-        return allowNull ? { data: null } : undefined;
+        return options?.allowNull ? { data: null } : undefined;
     }
 
     public static linkToBelongsToRelationship(
