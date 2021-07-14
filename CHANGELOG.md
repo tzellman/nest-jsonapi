@@ -1,3 +1,10 @@
+### [0.3.0](https://github.com/tzellman/nest-jsonapi/compare/v0.2.0...v0.3.0) (2021-07-14)
+
+#### Changes
+
+-   Support non-included relationships [#72](https://github.com/tzellman/nest-jsonapi/pull/72)
+-   update dependencies
+
 ### [0.2.0](https://github.com/tzellman/nest-jsonapi/compare/v0.1.1...v0.2.0) (2021-04-21)
 
 #### Changes
