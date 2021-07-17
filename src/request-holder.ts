@@ -1,6 +1,6 @@
 import { JsonapiPayloadOptions } from './payload-decorator';
 
-export class JsonapiRequestHolder {
+export class JsonapiRequestHolder implements JsonapiPayloadOptions {
     private payloadOptions: JsonapiPayloadOptions | undefined;
 
     public get resource(): string | undefined {
@@ -11,7 +11,31 @@ export class JsonapiRequestHolder {
         return !!this.payloadOptions?.untransformArray;
     }
 
-    public set({ resource, untransformArray }: JsonapiPayloadOptions): void {
-        this.payloadOptions = { resource, untransformArray };
+    public get untransformIncluded(): boolean {
+        return !!this.payloadOptions?.untransformIncluded;
+    }
+
+    public get nestIncluded(): boolean {
+        return !!this.payloadOptions?.nestIncluded;
+    }
+
+    public get removeCircularDependencies(): boolean {
+        return !!this.payloadOptions?.removeCircularDependencies;
+    }
+
+    public set({
+        resource,
+        untransformArray,
+        untransformIncluded,
+        nestIncluded,
+        removeCircularDependencies
+    }: JsonapiPayloadOptions): void {
+        this.payloadOptions = {
+            resource,
+            untransformArray,
+            untransformIncluded,
+            nestIncluded,
+            removeCircularDependencies
+        };
     }
 }

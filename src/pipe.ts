@@ -5,6 +5,7 @@ import { REQUEST } from '@nestjs/core';
 import { Request } from 'express';
 import { JSONAPI_MODULE_SERVICE } from './constants';
 import { assertIsDefined } from './utils';
+import { JsonapiPayloadOptions } from './payload-decorator';
 
 /**
  * This {@link PipeTransform} uses a {@link JsonapiService} to untransform the input payload
@@ -17,10 +18,17 @@ export class JsonapiPipe implements PipeTransform {
     ) {}
 
     public transform(value: JSONAPIDocument): ParsedJsonAPIResult | unknown {
-        const untransformed = this.jsonapiService.untransform(value);
+        const jsonapiRequestHolder: JsonapiPayloadOptions = this.request.jsonapiRequestHolder;
 
-        const jsonapiRequestHolder = this.request.jsonapiRequestHolder;
-        if (!jsonapiRequestHolder) {
+        const options = {
+            untransformIncluded: jsonapiRequestHolder?.untransformIncluded,
+            nestIncluded: jsonapiRequestHolder?.nestIncluded,
+            removeCircularDependencies: jsonapiRequestHolder?.removeCircularDependencies
+        };
+
+        const untransformed = this.jsonapiService.untransform(value, options);
+
+        if (!jsonapiRequestHolder || jsonapiRequestHolder.untransformIncluded) {
             return untransformed;
         }
 
