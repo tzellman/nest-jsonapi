@@ -2726,10 +2726,19 @@ img {
 					<a href="JsonapiRequestHolder.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="JsonapiRequestHolder.html#nestIncluded" class="tsd-kind-icon">nest<wbr>Included</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="JsonapiRequestHolder.html#removeCircularDependencies" class="tsd-kind-icon">remove<wbr>Circular<wbr>Dependencies</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="JsonapiRequestHolder.html#resource" class="tsd-kind-icon">resource</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="JsonapiRequestHolder.html#untransformArray" class="tsd-kind-icon">untransform<wbr>Array</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="JsonapiRequestHolder.html#untransformIncluded" class="tsd-kind-icon">untransform<wbr>Included</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="JsonapiRequestHolder.html#set" class="tsd-kind-icon">set</a>
@@ -2838,6 +2847,12 @@ img {
 				</li>
 			</ul>
 		</section>
+		<section class="tsd-panel">
+			<h3>Implements</h3>
+			<ul class="tsd-hierarchy">
+				<li><a href="../interfaces/JsonapiPayloadOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">JsonapiPayloadOptions</a></li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
@@ -2851,8 +2866,11 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Accessors</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="JsonapiRequestHolder.html#nestIncluded" class="tsd-kind-icon">nest<wbr>Included</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="JsonapiRequestHolder.html#removeCircularDependencies" class="tsd-kind-icon">remove<wbr>Circular<wbr>Dependencies</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="JsonapiRequestHolder.html#resource" class="tsd-kind-icon">resource</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="JsonapiRequestHolder.html#untransformArray" class="tsd-kind-icon">untransform<wbr>Array</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="JsonapiRequestHolder.html#untransformIncluded" class="tsd-kind-icon">untransform<wbr>Included</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2884,6 +2902,42 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Accessors</h2>
 			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="nestIncluded" class="tsd-anchor"></a>
+				<h3>nest<wbr>Included</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> nestIncluded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/JsonapiPayloadOptions.html">JsonapiPayloadOptions</a>.<a href="../interfaces/JsonapiPayloadOptions.html#nestIncluded">nestIncluded</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/request-holder.ts#L18">src/request-holder.ts:18</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="removeCircularDependencies" class="tsd-anchor"></a>
+				<h3>remove<wbr>Circular<wbr>Dependencies</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> removeCircularDependencies<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/JsonapiPayloadOptions.html">JsonapiPayloadOptions</a>.<a href="../interfaces/JsonapiPayloadOptions.html#removeCircularDependencies">removeCircularDependencies</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/request-holder.ts#L22">src/request-holder.ts:22</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 				<a name="resource" class="tsd-anchor"></a>
 				<h3>resource</h3>
 				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
@@ -2892,8 +2946,9 @@ img {
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/JsonapiPayloadOptions.html">JsonapiPayloadOptions</a>.<a href="../interfaces/JsonapiPayloadOptions.html#resource">resource</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/1fc9aa0/src/request-holder.ts#L6">src/request-holder.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/request-holder.ts#L6">src/request-holder.ts:6</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -2909,8 +2964,27 @@ img {
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/JsonapiPayloadOptions.html">JsonapiPayloadOptions</a>.<a href="../interfaces/JsonapiPayloadOptions.html#untransformArray">untransformArray</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/1fc9aa0/src/request-holder.ts#L10">src/request-holder.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/request-holder.ts#L10">src/request-holder.ts:10</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="untransformIncluded" class="tsd-anchor"></a>
+				<h3>untransform<wbr>Included</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> untransformIncluded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/JsonapiPayloadOptions.html">JsonapiPayloadOptions</a>.<a href="../interfaces/JsonapiPayloadOptions.html#untransformIncluded">untransformIncluded</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/request-holder.ts#L14">src/request-holder.ts:14</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2930,7 +3004,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/1fc9aa0/src/request-holder.ts#L14">src/request-holder.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/request-holder.ts#L26">src/request-holder.ts:26</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

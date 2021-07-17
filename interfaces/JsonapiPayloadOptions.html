@@ -2747,10 +2747,19 @@ img {
 			<a href="JsonapiPayloadOptions.html" class="tsd-kind-icon">Jsonapi<wbr>Payload<wbr>Options</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="JsonapiPayloadOptions.html#nestIncluded" class="tsd-kind-icon">nest<wbr>Included</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="JsonapiPayloadOptions.html#removeCircularDependencies" class="tsd-kind-icon">remove<wbr>Circular<wbr>Dependencies</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
 					<a href="JsonapiPayloadOptions.html#resource" class="tsd-kind-icon">resource</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
 					<a href="JsonapiPayloadOptions.html#untransformArray" class="tsd-kind-icon">untransform<wbr>Array</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="JsonapiPayloadOptions.html#untransformIncluded" class="tsd-kind-icon">untransform<wbr>Included</a>
 				</li>
 			</ul>
 		</li>
@@ -2832,6 +2841,12 @@ img {
 				</li>
 			</ul>
 		</section>
+		<section class="tsd-panel">
+			<h3>Implemented by</h3>
+			<ul class="tsd-hierarchy">
+				<li><a href="../classes/JsonapiRequestHolder.html" class="tsd-signature-type" data-tsd-kind="Class">JsonapiRequestHolder</a></li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
@@ -2839,8 +2854,11 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="JsonapiPayloadOptions.html#nestIncluded" class="tsd-kind-icon">nest<wbr>Included</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="JsonapiPayloadOptions.html#removeCircularDependencies" class="tsd-kind-icon">remove<wbr>Circular<wbr>Dependencies</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="JsonapiPayloadOptions.html#resource" class="tsd-kind-icon">resource</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="JsonapiPayloadOptions.html#untransformArray" class="tsd-kind-icon">untransform<wbr>Array</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="JsonapiPayloadOptions.html#untransformIncluded" class="tsd-kind-icon">untransform<wbr>Included</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2849,12 +2867,32 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="nestIncluded" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> nest<wbr>Included</h3>
+				<div class="tsd-signature tsd-kind-icon">nest<wbr>Included<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/payload-decorator.ts#L8">src/payload-decorator.ts:8</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="removeCircularDependencies" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> remove<wbr>Circular<wbr>Dependencies</h3>
+				<div class="tsd-signature tsd-kind-icon">remove<wbr>Circular<wbr>Dependencies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/payload-decorator.ts#L9">src/payload-decorator.ts:9</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 				<a name="resource" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagOptional">Optional</span> resource</h3>
 				<div class="tsd-signature tsd-kind-icon">resource<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/1fc9aa0/src/payload-decorator.ts#L5">src/payload-decorator.ts:5</a></li>
+						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/payload-decorator.ts#L5">src/payload-decorator.ts:5</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2864,7 +2902,17 @@ img {
 				<div class="tsd-signature tsd-kind-icon">untransform<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/1fc9aa0/src/payload-decorator.ts#L6">src/payload-decorator.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/payload-decorator.ts#L6">src/payload-decorator.ts:6</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="untransformIncluded" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> untransform<wbr>Included</h3>
+				<div class="tsd-signature tsd-kind-icon">untransform<wbr>Included<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/tzellman/nest-jsonapi/blob/67560a3/src/payload-decorator.ts#L7">src/payload-decorator.ts:7</a></li>
 					</ul>
 				</aside>
 			</section>
