@@ -1,3 +1,10 @@
+### [0.4.0](https://github.com/tzellman/nest-jsonapi/compare/v0.3.0...v0.4.0) (2021-07-17)
+
+#### Changes
+
+-   Support untransform options via `@JsonapiPayload` decorator [#73](https://github.com/tzellman/nest-jsonapi/pull/73)
+-   Allow full untransformed payload via `@JsonapiPipe` [#73](https://github.com/tzellman/nest-jsonapi/pull/73)
+
 ### [0.3.0](https://github.com/tzellman/nest-jsonapi/compare/v0.2.0...v0.3.0) (2021-07-14)
 
 #### Changes
