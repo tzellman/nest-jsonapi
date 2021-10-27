@@ -40,7 +40,8 @@ export class JsonapiExceptionFilter extends BaseExceptionFilter {
             this.logger.error(exception);
         }
 
-        if (isJsonapiContentType(request.header('accept'))) {
+        const acceptHeader = request.header('accept');
+        if (typeof acceptHeader === 'string' && isJsonapiContentType(acceptHeader)) {
             let status = HttpStatus.INTERNAL_SERVER_ERROR;
             let title = 'Server Error';
             let detail;
