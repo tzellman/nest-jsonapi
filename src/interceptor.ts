@@ -36,7 +36,8 @@ export class JsonapiInterceptor implements NestInterceptor {
         }
 
         // only make jsonapi specific mofifications IFF the client sent the proper header
-        if (isJsonapiContentType(request.header('accept'))) {
+        const acceptHeader = request.header('accept');
+        if (typeof acceptHeader === 'string' && isJsonapiContentType(acceptHeader)) {
             response.setHeader('content-type', JSONAPI_CONTENT_TYPE);
             const start = new Date().getTime();
             return next.handle().pipe(

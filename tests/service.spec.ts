@@ -111,8 +111,7 @@ describe('jsonapi service', () => {
             const result = service.transform({ source: bob, resourceName: RESOURCE_PEOPLE });
             expect(result).toBeDefined();
 
-            const { data } = result;
-            expectPersonWithAllAtts(data, bob);
+            expectPersonWithAllAtts(result.data as Dictionary, bob);
         });
 
         it('has attributes for a collection of people', () => {
@@ -121,7 +120,7 @@ describe('jsonapi service', () => {
             const result = service.transform({ source: [bob, alice], resourceName: RESOURCE_PEOPLE });
             expect(result).toBeDefined();
 
-            const { data } = result;
+            const data = result.data as Dictionary[];
             expect(data).toBeDefined();
             expect(data.length).toEqual(2);
             expectPersonWithAllAtts(data[0], bob);
@@ -148,7 +147,7 @@ describe('jsonapi service', () => {
             const bob = new Person('Bob', 'Martin');
             const result = service.transform({ source: bob, resourceName: RESOURCE_PEOPLE });
 
-            const { data } = result;
+            const data = result.data as Dictionary;
             expectPersonWithSomeAtts(data, bob);
         });
 
@@ -157,7 +156,7 @@ describe('jsonapi service', () => {
             const alice = new Person('Alice', 'Smith');
             const result = service.transform({ source: [bob, alice], resourceName: RESOURCE_PEOPLE });
 
-            const { data } = result;
+            const data = result.data as Dictionary[];
             expectModelArray(data, [bob, alice], RESOURCE_PEOPLE);
             expectPersonWithSomeAtts(data[0], bob);
             expectPersonWithSomeAtts(data[1], alice);
@@ -184,7 +183,7 @@ describe('jsonapi service', () => {
         it('has correct attributes for single person', () => {
             const bob = new Person('Bob', 'Martin');
             const result = service.transform({ source: bob, resourceName: RESOURCE_PEOPLE });
-            expectPersonWithFullNameOnly(result.data, bob);
+            expectPersonWithFullNameOnly(result.data as Dictionary, bob);
         });
 
         it('has correct attributes for collection of people', () => {
@@ -192,7 +191,7 @@ describe('jsonapi service', () => {
             const alice = new Person('Alice', 'Smith');
             const result = service.transform({ source: [bob, alice], resourceName: RESOURCE_PEOPLE });
 
-            const { data } = result;
+            const data = result.data as Dictionary[];
             expectModelArray(data, [bob, alice], RESOURCE_PEOPLE);
             expectPersonWithFullNameOnly(data[0], bob);
             expectPersonWithFullNameOnly(data[1], alice);
@@ -229,7 +228,8 @@ describe('jsonapi service', () => {
 
             const result = transformResult(peopleResult);
 
-            const { data, meta, links } = result;
+            const { meta, links } = result;
+            const data = result.data as Dictionary[];
             expectModelArray(data, peopleResult.results, RESOURCE_PEOPLE);
             expectPersonWithFirstLastName(data[0], peopleResult.results[0]);
             expectPersonWithFirstLastName(data[1], peopleResult.results[1]);
@@ -254,7 +254,8 @@ describe('jsonapi service', () => {
 
             const result = transformResult(peopleResult);
 
-            const { data, links, meta } = result;
+            const { links, meta } = result;
+            const data = result.data as Dictionary[];
             expectModelArray(data, peopleResult.results, RESOURCE_PEOPLE);
             expectPersonWithFirstLastName(data[0], peopleResult.results[0]);
             expectPersonWithFirstLastName(data[1], peopleResult.results[1]);
@@ -320,11 +321,12 @@ describe('jsonapi service', () => {
             const photo = new Photo(faker.image.imageUrl(), bob);
             const result = service.transform({ source: photo, resourceName: RESOURCE_PHOTOS });
 
-            const { data, included } = result;
+            const data = result.data as Dictionary;
+            const included = result.included as Dictionary[];
             expectModel(data, photo, RESOURCE_PHOTOS);
-            expect(data.attributes.url).toEqual(photo.url);
+            expect((data.attributes as Dictionary).url).toEqual(photo.url);
             // make sure the relationship linkage was included
-            expectRelationship(data.relationships.creator, bob, RESOURCE_PEOPLE);
+            expectRelationship((data.relationships as Dictionary).creator as Dictionary, bob, RESOURCE_PEOPLE);
             // ensure the model was included
             expectModelArray(included, [bob], RESOURCE_PEOPLE);
             expect(included[0].attributes['first-name']).toEqual(bob.firstName);
@@ -337,7 +339,8 @@ describe('jsonapi service', () => {
             const album = new Album('faves', [photo]);
             const result = service.transform({ source: album, resourceName: RESOURCE_ALBUMS });
 
-            const { data, included } = result;
+            const { included } = result;
+            const data = result.data as Dictionary;
             expectModel(data, album, RESOURCE_ALBUMS);
             expect(included).toBeDefined();
             expect(included.length).toBe(2);
@@ -367,11 +370,13 @@ describe('jsonapi service', () => {
             const album = new Album('faves', [photo]);
             const result = service.transform({ source: album, resourceName: RESOURCE_ALBUMS });
 
-            const { data, included } = result;
+            const data = result.data as Dictionary;
+            const included = result.included as Dictionary[];
             expectModel(data, album, RESOURCE_ALBUMS);
             expect(included).toBeUndefined();
-            expect(data.relationships.photos).toBeDefined();
-            expectRelationshipArray(data.relationships.photos, RESOURCE_PHOTOS, 1);
+            const relationships = data.relationships as Dictionary;
+            expect(relationships.photos).toBeDefined();
+            expectRelationshipArray(relationships.photos as Dictionary, RESOURCE_PHOTOS, 1);
         });
     });
 });
