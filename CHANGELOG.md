@@ -1,3 +1,11 @@
+### [0.5.0](https://github.com/tzellman/nest-jsonapi/compare/v0.4.0...v0.5.0) (2021-10-28)
+
+#### Changes
+
+-   Updated several dependencies to latest versions, including TypeScript 4.4.x
+-   Updated nest monorepo versions to 8.x
+-   Fixed linting issues after updates [#90](https://github.com/tzellman/nest-jsonapi/pull/90)
+
 ### [0.4.0](https://github.com/tzellman/nest-jsonapi/compare/v0.3.0...v0.4.0) (2021-07-17)
 
 #### Changes
