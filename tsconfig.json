@@ -32,7 +32,7 @@
         "entryPoints": ["src/index.ts"],
         "out": "docs",
         "excludePrivate": true,
-        "theme": "minimal",
+        "theme": "default",
         "includeVersion": true
     }
 }
