@@ -1,3 +1,7 @@
+[![NPM][npm-badge-img]][npm-badge-link]
+[![Build Status][build-status-img]][build-status-link]
+[![Download count][npm-downloads-img]][npm-badge-link]
+
 <p align="center">
   <a href="http://nestjs.com"><img src="https://nestjs.com/img/logo_text.svg" alt="Nest Logo" width="320" /></a>
 </p>
@@ -121,3 +125,9 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
+
+[npm-badge-img]: https://badge.fury.io/js/nest-jsonapi.svg
+[npm-badge-link]: http://badge.fury.io/js/nest-jsonapi
+[build-status-img]: https://github.com/tzellman/nest-jsonapi/workflows/Node.js%20CI/badge.svg?branch=master&event=push
+[build-status-link]: https://github.com/tzellman/nest-jsonapi/actions/workflows/node.js.yml
+[npm-downloads-img]: https://img.shields.io/npm/dt/nest-jsonapi.svg
