@@ -346,6 +346,16 @@ describe('jsonapi service', () => {
             expect(included.length).toBe(2);
         });
 
+        it('empty array relationships are included', () => {
+            const album = new Album('faves', []);
+            const result = service.transform({ source: album, resourceName: RESOURCE_ALBUMS });
+
+            const data = result.data as Dictionary;
+            expectModel(data, album, RESOURCE_ALBUMS);
+            expect(data.relationships).toBeDefined();
+            expect((data.relationships as Dictionary).photos).toBeDefined();
+        });
+
         it('hasMany relationship, not included', () => {
             // re-register, but do not include the photos in the payload
             service.register({

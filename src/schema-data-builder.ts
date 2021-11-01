@@ -53,7 +53,7 @@ export class SchemaDataBuilder<Resource = unknown> {
     ): Relationship | undefined {
         const { data } = params;
         const relation = data[field];
-        if (relation && Array.isArray(relation) && relation.length) {
+        if (relation && Array.isArray(relation)) {
             return {
                 // @ts-ignore
                 data: data[field].map((obj: unknown) => ({
