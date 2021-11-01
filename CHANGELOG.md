@@ -1,3 +1,9 @@
+### [0.5.1](https://github.com/tzellman/nest-jsonapi/compare/v0.5.0...v0.5.1) (2021-11-01)
+
+#### Changes
+
+-   Fixed `includeHasManyRelationship` to include empty array relationships [#95](https://github.com/tzellman/nest-jsonapi/pull/95)
+
 ### [0.5.0](https://github.com/tzellman/nest-jsonapi/compare/v0.4.0...v0.5.0) (2021-10-28)
 
 #### Changes

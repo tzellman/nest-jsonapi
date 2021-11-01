@@ -1,6 +1,6 @@
 {
   "name": "nest-jsonapi",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "a NestJS module that provides JSONAPI integration",
   "keywords": ["nestjs", "nest", "jsonapi", "json-api"],
   "license": "MIT",
