@@ -54,7 +54,7 @@
     "@nestjs/testing": "8.2.3",
     "@types/dot-object": "2.1.2",
     "@types/faker": "5.5.9",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.0.3",
     "@types/node": "14.17.34",
     "@types/validator": "13.6.6",
     "@typescript-eslint/eslint-plugin": "5.4.0",
