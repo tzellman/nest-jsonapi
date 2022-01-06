@@ -10,4 +10,4 @@ export * from './request-holder';
 export * from './schema-builder';
 export * from './schema-data-builder';
 export * from './service';
-export * from './utils';
+export { buildLinks } from './utils';

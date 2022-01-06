@@ -1,5 +1,6 @@
-import * as url from 'url';
+import { URL } from 'url';
 import { buildLinks } from '../src';
+import { assertIsDefined } from '../src/utils';
 
 describe('utils', () => {
     describe('buildLinks', () => {
@@ -31,11 +32,16 @@ describe('utils', () => {
         });
 
         const expectLink = (resultLink: string | undefined, expectedLink: string): void => {
-            expect(resultLink).toBeDefined();
-            const resultParts = url.parse(resultLink, true);
-            const expectedParts = url.parse(expectedLink, true);
-            expect(resultParts.pathname).toEqual(expectedParts.pathname);
-            expect(resultParts.query).toEqual(expectedParts.query);
+            assertIsDefined(resultLink);
+            const resultUrl = new URL(`http://example.com${resultLink}`);
+            const expectedUrl = new URL(`http://example.com${expectedLink}`);
+            expect(resultUrl.pathname).toEqual(expectedUrl.pathname);
+            for (const [key, value] of resultUrl.searchParams.entries()) {
+                expect(value).toEqual(expectedUrl.searchParams.get(key));
+            }
+            for (const [key, value] of expectedUrl.searchParams.entries()) {
+                expect(resultUrl.searchParams.get(key)).toEqual(value);
+            }
         };
 
         it('can handle first page', () => {

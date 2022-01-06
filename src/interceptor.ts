@@ -42,14 +42,14 @@ export class JsonapiInterceptor implements NestInterceptor {
             const start = new Date().getTime();
             return next.handle().pipe(
                 map((data) => {
-                    let jsonapiDocument: JSONAPIDocument;
+                    let jsonapiDocument: JSONAPIDocument | undefined;
                     if (data) {
                         assertIsDefined(payloadOptions?.resource);
-                        const params = {
+                        const params: Required<TransformParams> = {
                             resourceName: payloadOptions.resource,
-                            options: { meta: {} }
-                        } as TransformParams;
-                        params.source = data;
+                            options: { meta: {} },
+                            source: data
+                        };
                         if (Array.isArray(data)) {
                             params.options.meta = { count: data.length };
                         }

@@ -13,6 +13,7 @@ import { camelCase, isFunction, kebabCase, merge, omit, pick } from 'lodash';
 const FIELD_ID = 'id';
 
 export type ResourceLink = string | { href: string; meta?: Dictionary };
+
 export interface ResourceLinks {
     [k: string]: ResourceLink;
 }
@@ -155,7 +156,7 @@ export class SchemaDataBuilder<Resource = unknown> {
 
     public attributes(handler?: SerializeHandler<Dictionary> | AllowDeny<Resource>): SchemaDataBuilder<Resource> {
         if (isFunction(handler)) {
-            this.bindings.attributes = handler as SerializeHandler<Dictionary>;
+            this.bindings.attributes = handler;
         } else {
             this.bindings.attributes = this._attributes(handler as AllowDeny<Resource>);
         }
@@ -166,7 +167,7 @@ export class SchemaDataBuilder<Resource = unknown> {
         handler?: DeserializeHandler<Dictionary> | AllowDeny<Resource>
     ): SchemaDataBuilder<Resource> {
         if (isFunction(handler)) {
-            this.bindings.untransformAttributes = handler as DeserializeHandler<Dictionary>;
+            this.bindings.untransformAttributes = handler;
         } else {
             this.bindings.untransformAttributes = this._untransformAttributes(handler as AllowDeny<Resource>);
         }
@@ -228,7 +229,7 @@ export class SchemaDataBuilder<Resource = unknown> {
         return (params): Dictionary => {
             const { attributes } = params;
             return Object.keys(attributes ?? {})
-                .map((k) => [camelCase(k), attributes[k]])
+                .map((k): [string, unknown] => [camelCase(k), attributes[k]])
                 .filter(([k]) => !options || !options.allow || options.allow.includes(k as keyof Resource))
                 .filter(([k]) => !options || !options.deny || !options.deny.includes(k as keyof Resource))
                 .reduce((obj, [key, val]) => {
@@ -236,7 +237,7 @@ export class SchemaDataBuilder<Resource = unknown> {
                         obj[key] = val;
                     }
                     return obj;
-                }, {});
+                }, {} as Dictionary);
         };
     }
 }
