@@ -1,3 +1,12 @@
+### [0.6.0](https://github.com/tzellman/nest-jsonapi/compare/v0.5.1...v0.6.0) (2022-01-06)
+
+#### Changes
+
+-   Updated nest monorepo devDependency to 8.2+
+-   Updated several dependencies to latest versions
+-   Fixed package.json dependency issues (missing/mis-configured)
+-   Set `noImplicitAny` and `strictNullChecks` to true in tsconfig.json + related changes
+
 ### [0.5.1](https://github.com/tzellman/nest-jsonapi/compare/v0.5.0...v0.5.1) (2021-11-01)
 
 #### Changes

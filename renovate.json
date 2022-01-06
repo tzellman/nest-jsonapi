@@ -23,12 +23,17 @@
     "enabledManagers": ["npm"],
     "packageRules": [
         {
-            "paths": ["+(package.json)"],
-            "rangeStrategy": "bump"
+            "matchPaths": ["+(package.json)"],
+            "rangeStrategy": "bump",
+            "ignoreDeps": ["faker"]
         },
         {
             "matchPackageNames": ["husky"],
             "allowedVersions": "<5"
+        },
+        {
+            "matchPackageNames": ["@types/node"],
+            "allowedVersions": "<15"
         }
     ],
     "masterIssue": false,

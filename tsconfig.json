@@ -9,7 +9,7 @@
         "incremental": true,
         "lib": ["es6", "esnext.asynciterable", "es2019"],
         "module": "commonjs",
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "noImplicitThis": true,
         "noLib": false,
         "noUnusedLocals": false,
@@ -22,7 +22,7 @@
         "sourceMap": true,
         "strict": true,
         "strictFunctionTypes": false,
-        "strictNullChecks": false,
+        "strictNullChecks": true,
         "target": "es2017",
         "tsBuildInfoFile": "./lib/tsconfig.tsbuildinfo",
         "typeRoots": ["./node_modules/@types", "./types"]

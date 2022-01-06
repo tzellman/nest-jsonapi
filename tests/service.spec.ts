@@ -322,7 +322,7 @@ describe('jsonapi service', () => {
             const result = service.transform({ source: photo, resourceName: RESOURCE_PHOTOS });
 
             const data = result.data as Dictionary;
-            const included = result.included as Dictionary[];
+            const included = result.included as Array<{ attributes: Dictionary }>;
             expectModel(data, photo, RESOURCE_PHOTOS);
             expect((data.attributes as Dictionary).url).toEqual(photo.url);
             // make sure the relationship linkage was included
@@ -339,7 +339,7 @@ describe('jsonapi service', () => {
             const album = new Album('faves', [photo]);
             const result = service.transform({ source: album, resourceName: RESOURCE_ALBUMS });
 
-            const { included } = result;
+            const included = result.included as Dictionary[];
             const data = result.data as Dictionary;
             expectModel(data, album, RESOURCE_ALBUMS);
             expect(included).toBeDefined();
